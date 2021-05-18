@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>通用地址</title>
+</head>
+<body>
+<script type="text/javascript" th:inline="javascript">
+   //上下文访问的路径
+    var contextPath=[[${#request.getContextPath()}]]
+   //获取当前页面的地址
+
+    $(function () {
+        //登录按钮的单击
+        $(".btn-login").on("click",function () {
+            //alert("button click")
+            //当前页面的访问地址
+            let returnUrl=window.location.href;
+            window.location.href=contextPath+"/loan/page/login?returnUrl="+returnUrl;
+        });
+    })
+
+</script>
+
+</body>
+</html>
